@@ -14,7 +14,7 @@
       scroll-behavior: smooth;
     }
 
-    /* 🔹 Simple Home Bar */
+    /* 🔹 Home Bar */
     .home-bar {
       background-color: #a91d1d;
       color: white;
@@ -40,30 +40,31 @@
       color: #f2c14e;
     }
 
+    /* 🔹 Header Section */
     header {
       background-color: #a91d1d;
-      padding: 140px 20px 80px; /* Added top padding so it's not hidden under the bar */
+      padding: 160px 20px 120px; /* More padding for better viewing */
       color: white;
     }
 
     header h1 {
-      font-size: 3em;
-      margin-bottom: 0;
+      font-size: 3.2em;
+      margin-bottom: 10px;
     }
 
     header p {
-      font-size: 1.2em;
+      font-size: 1.3em;
       margin-top: 5px;
       color: #ffe5b4;
     }
 
     .buttons {
-      margin-top: 20px;
+      margin-top: 30px;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 24px;
+      padding: 14px 28px;
       margin: 10px;
       border-radius: 30px;
       text-decoration: none;
@@ -88,14 +89,16 @@
       background-color: #8c1717;
     }
 
+    /* 🔹 Menu Section */
     .menu {
-      padding: 40px 20px;
+      padding: 100px 20px; /* Increased vertical padding */
       text-align: center;
     }
 
     .menu h2 {
       color: #a91d1d;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      font-size: 2.2em;
     }
 
     .menu-grid {
@@ -103,180 +106,15 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      gap: 30px;
+      gap: 40px;
     }
 
     .product {
       background: #fff;
       border-radius: 10px;
-      width: 220px;
+      width: 250px;
       text-align: center;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       overflow: hidden;
-    }
-
-    .product img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-bottom: 3px solid #a91d1d;
-      transition: transform 0.3s ease;
-    }
-
-    .product:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-    }
-
-    .order {
-      background: #ffe5b4;
-      padding: 40px 20px;
-    }
-
-    .order h2 {
-      color: #a91d1d;
-    }
-
-    form {
-      max-width: 400px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    input, select, textarea {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    button {
-      background-color: #a91d1d;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background-color: #8c1717;
-    }
-
-    footer {
-      background: #a91d1d;
-      color: white;
-      padding: 20px 0;
-      margin-top: 40px;
-    }
-
-    /* Contact Section */
-    .contact {
-      background: #fff;
-      padding: 40px 20px;
-    }
-
-    .contact h2 {
-      color: #a91d1d;
-    }
-
-    .contact p {
-      margin: 8px 0;
-    }
-
-    @media (max-width: 600px) {
-      .menu-grid {
-        flex-direction: column;
-        gap: 20px;
-      }
-      .home-bar {
-        flex-direction: column;
-        padding: 10px 0;
-        gap: 10px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- 🔹 Home Bar -->
-  <div class="home-bar">
-    <a href="#top">Home</a>
-    <a href="#menu">Menu</a>
-    <a href="#order">Order</a>
-    <a href="#contact">Contact</a>
-  </div>
-
-  <header id="top">
-    <img src="logo.jpg" alt="Bowl & Seoul Logo" style="height: 100px; width: 100px; object-fit: contain; margin-bottom: 10px;">
-    <h1>Bowl & Seoul</h1>
-    <p>Authentic Korean Flavors in Every Bite 🍜</p>
-    <div class="buttons">
-      <a href="#order" class="btn primary">Order Now</a>
-      <a href="#contact" class="btn">Contact Us</a>
-    </div>
-  </header>
-
-  <section id="menu" class="menu">
-    <h2>Our Menu</h2>
-    <div class="menu-grid">
-      <div class="product">
-        <img src="p1.jpg" alt="K Bowl">
-        <h3>K Bowl</h3>
-        <p>₱120</p>
-      </div>
-
-      <div class="product">
-        <img src="p2.jpg" alt="Yakult Lemonade">
-        <h3>Yakult Lemonade</h3>
-        <p>₱35</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="order" class="order">
-    <h2>Place Your Order</h2>
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSf_K9UmcoywC8TgsVt5-w4z68hSzGWKy475o7BUFk8fbunJdg/formResponse" method="post" target="_blank">
-      <label for="name">Full Name</label><br>
-      <input type="text" id="name" name="entry.1168519287" placeholder="Enter your name" required><br>
-
-      <label for="item">Select Item</label><br>
-      <select id="item" name="entry.2059826757" required>
-        <option value="">-- Choose an item --</option>
-        <option value="K Bowl">K Bowl - ₱120</option>
-        <option value="Yakult Lemonade">Yakult Lemonade - ₱35</option>
-        <option value="Combo (Both)">Combo (Both) - ₱155</option>
-      </select><br>
-
-      <label for="quantity">Quantity</label><br>
-      <input type="number" id="quantity" name="entry.1537886124" min="1" value="1" required><br>
-
-      <label for="notes">Additional Notes</label><br>
-      <textarea id="notes" name="entry.1245678910" rows="3" placeholder="Add any notes..."></textarea><br>
-
-      <button type="submit">Submit Order</button>
-    </form>
-    <p style="font-size: 0.9em; color: #a91d1d;">This will open Google Form in a new tab for confirmation.</p>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p>📍 Angeles City, Pampanga</p>
-    <p>📞 0966-368-9734</p>
-    <p>📧 <span style="color: blue; text-decoration: underline; cursor: default;">bowlandseoul@gmail.com</span></p>
-    <p><a href="#menu" class="btn">Back to Menu</a></p>
-  </section>
-
-  <footer>
-    <p>© 2025 Bowl & Seoul. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
+      pa
