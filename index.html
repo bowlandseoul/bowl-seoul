@@ -14,9 +14,61 @@
       scroll-behavior: smooth;
     }
 
+    /* 🔹 Navigation Bar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #a91d1d;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav .logo img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+
+    nav .logo span {
+      font-size: 1.4em;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #f2c14e;
+    }
+
     header {
       background-color: #a91d1d;
-      padding: 80px 20px;
+      padding: 120px 20px 80px; /* Added top padding so header content isn't hidden by navbar */
       color: white;
     }
 
@@ -55,7 +107,7 @@
     .btn.primary {
       background-color: #a91d1d;
       color: white;
-      border: 2px solid white; /* <-- Add this line for white border */
+      border: 2px solid white;
     }
 
     .btn.primary:hover {
@@ -166,82 +218,31 @@
     }
 
     @media (max-width: 600px) {
-      .menu-grid {
+      nav ul {
         flex-direction: column;
-        gap: 20px;
+        background-color: #8c1717;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        display: none;
+      }
+      nav ul.active {
+        display: flex;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-  <img src="logo.jpg" alt="Bowl & Seoul Logo" style="height: 100px; width: 100px; object-fit: contain; margin-bottom: 10px;">
-  <h1>Bowl & Seoul</h1>
-  <p>Authentic Korean Flavors in Every Bite 🍜</p>
-  <div class="buttons">
-    <a href="#order" class="btn primary">Order Now</a>
-    <a href="#contact" class="btn">Contact Us</a>
-  </div>
-</header>
-
-
-  <section id="menu" class="menu">
-    <h2>Our Menu</h2>
-    <div class="menu-grid">
-      <div class="product">
-        <img src="p1.jpg" alt="K Bowl">
-        <h3>K Bowl</h3>
-        <p>₱120</p>
-      </div>
-
-      <div class="product">
-        <img src="p2.jpg" alt="Yakult Lemonade">
-        <h3>Yakult Lemonade</h3>
-        <p>₱35</p>
-      </div>
+  <!-- 🔹 Top Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <img src="logo.jpg" alt="Bowl & Seoul Logo">
+      <span>Bowl & Seoul</span>
     </div>
-  </section>
-
-  <section id="order" class="order">
-    <h2>Place Your Order</h2>
-    <!-- Connected to your Google Form -->
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSf_K9UmcoywC8TgsVt5-w4z68hSzGWKy475o7BUFk8fbunJdg/formResponse" method="post" target="_blank">
-      <label for="name">Full Name</label><br>
-      <input type="text" id="name" name="entry.1168519287" placeholder="Enter your name" required><br>
-
-      <label for="item">Select Item</label><br>
-      <select id="item" name="entry.2059826757" required>
-        <option value="">-- Choose an item --</option>
-        <option value="K Bowl">K Bowl - ₱120</option>
-        <option value="Yakult Lemonade">Yakult Lemonade - ₱35</option>
-        <option value="Combo (Both)">Combo (Both) - ₱155</option>
-      </select><br>
-
-      <label for="quantity">Quantity</label><br>
-      <input type="number" id="quantity" name="entry.1537886124" min="1" value="1" required><br>
-
-      <label for="notes">Additional Notes</label><br>
-      <textarea id="notes" name="entry.1245678910" rows="3" placeholder="Add any notes..."></textarea><br>
-
-      <button type="submit">Submit Order</button>
-    </form>
-    <p style="font-size: 0.9em; color: #a91d1d;">This will open Google Form in a new tab for confirmation.</p>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <p>📍 Angeles City, Pampanga</p>
-    <p>📞 0966-368-9734</p>
-    <p>📧 <span style="color: blue; text-decoration: underline; cursor: default;">bowlandseoul@gmail.com</span></p>
-    <p><a href="#menu" class="btn">Back to Menu</a></p>
-  </section>
-
-  <footer>
-    <p>© 2025 Bowl & Seoul. All rights reserved.</p>
-  </footer>
-
-</body>
-
-</html>
-
+    <ul>
+      <li><a href="#top">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#order">Order</a></li>
+      <li><
